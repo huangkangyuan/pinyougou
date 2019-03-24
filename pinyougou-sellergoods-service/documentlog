@@ -1,0 +1,532 @@
+2019-03-24 08:46:28,859 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 08:46:28,986 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 08:46:28 CST 2019]; root of context hierarchy
+2019-03-24 08:46:29,060 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 08:46:29,569 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 08:46:29,614 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 08:46:29,665 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 08:46:29,933 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 08:46:31,704 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.BrandService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,016 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,017 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,017 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.BrandService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=21336&registry=zookeeper&timestamp=1553388391719, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,304 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)
+  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.56.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,363 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-47.106.232.70.cache, data: {com.pinyougou.sellergoods.service.BrandService=empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=configurators&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,deleteByIds,findAll&pid=19236&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553250426338 empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=routers&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,deleteByIds,findAll&pid=19236&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553250426338 dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,deleteByIds,findAll&pid=19740&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553250382015}, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:32,381 [INFO ][ZkClient-EventThread-25-47.106.232.70:2181] method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+ Starting ZkClient event thread.
+2019-03-24 08:46:41,402 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2019-03-24 08:46:41,403 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:host.name=RN069R2M9E0IQHA
+2019-03-24 08:46:41,403 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.version=1.8.0_181
+2019-03-24 08:46:41,404 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.vendor=Oracle Corporation
+2019-03-24 08:46:41,405 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.home=E:\jdk\jre
+2019-03-24 08:46:41,405 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.class.path=E:\maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-24 08:46:41,406 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.library.path=E:\jdk\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/jre/bin/server;E:/jre/bin;E:/jre/lib/amd64;F:\xftp6\;F:\oracle\Administrator\product\11.2.0\client_1\bin;F:\oracle\Administrator\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;E:\jdk\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\maven\apache-maven-3.5.4\bin;C:\Program Files\erl9.2\bin;F:\mongoDB\bin;E:\gradle\gradle-4.10.2\bin;E:\android\Android\AndroidStudio\sdk\sdk\platform-tools;F:\svn\bin;F:\tortoiseSVN\bin;E:\curl\curl-7.62.0-win64-mingw\bin;C:\Program Files\dotnet\;F:\git\Git\cmd;F:\winSCP\WinSCP\;F:\scala\bin;E:\hadoop\hadoop-common-2.2.0-bin-master\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;F:\Intellij IDEA\IntelliJ IDEA 2018.3.3\bin;;E:\eclipse\eclipse-jee-mars-2-win32-x86_64\eclipse;;.
+2019-03-24 08:46:41,412 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-03-24 08:46:41,413 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.compiler=<NA>
+2019-03-24 08:46:41,413 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.name=Windows 10
+2019-03-24 08:46:41,414 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.arch=amd64
+2019-03-24 08:46:41,414 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.version=10.0
+2019-03-24 08:46:41,415 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.name=Administrator
+2019-03-24 08:46:41,415 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.home=C:\Users\Administrator
+2019-03-24 08:46:41,415 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.dir=F:\project\pinyougou-parent\pinyougou-sellergoods-service
+2019-03-24 08:46:41,417 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+ Initiating client connection, connectString=47.106.232.70:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@289fbce8
+2019-03-24 08:46:41,506 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 08:46:41,518 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+ Socket connection established to 47.106.232.70/47.106.232.70:2181, initiating session
+2019-03-24 08:46:41,593 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+ Session establishment complete on server 47.106.232.70/47.106.232.70:2181, sessionid = 0x1699ea2e9700029, negotiated timeout = 30000
+2019-03-24 08:46:41,595 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (SyncConnected)
+2019-03-24 08:46:41,597 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:41,768 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:41,946 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:41,976 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:344)
+ Root WebApplicationContext: initialization completed in 13084 ms
+2019-03-24 08:46:56,790 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 08:46:56,841 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 08:46:56 CST 2019]; root of context hierarchy
+2019-03-24 08:46:56,904 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 08:46:57,230 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 08:46:57,270 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 08:46:57,312 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 08:46:57,553 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 08:46:58,905 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.BrandService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:59,100 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:59,101 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=2660&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388418936, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:59,102 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.BrandService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=2660&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388418936 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=2660&registry=zookeeper&timestamp=1553388418920, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:46:59,300 [ERROR][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:350)
+ Context initialization failed
+com.alibaba.dubbo.rpc.RpcException: Fail to start server(url: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=2660&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388418936) Failed to bind NettyServer on /192.168.56.1:20880, cause: Failed to bind to: /0.0.0.0:20880
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.createServer(DubboProtocol.java:289)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.openServer(DubboProtocol.java:266)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.export(DubboProtocol.java:253)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:56)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:55)
+	at com.alibaba.dubbo.rpc.Protocol$Adpative.export(Protocol$Adpative.java)
+	at com.alibaba.dubbo.registry.integration.RegistryProtocol.doLocalExport(RegistryProtocol.java:153)
+	at com.alibaba.dubbo.registry.integration.RegistryProtocol.export(RegistryProtocol.java:107)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:53)
+	at com.alibaba.dubbo.rpc.Protocol$Adpative.export(Protocol$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:485)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:281)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:242)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:143)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:109)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:883)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.alibaba.dubbo.remoting.RemotingException: Failed to bind NettyServer on /192.168.56.1:20880, cause: Failed to bind to: /0.0.0.0:20880
+	at com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:72)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyServer.<init>(NettyServer.java:63)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyTransporter.bind(NettyTransporter.java:33)
+	at com.alibaba.dubbo.remoting.Transporter$Adpative.bind(Transporter$Adpative.java)
+	at com.alibaba.dubbo.remoting.Transporters.bind(Transporters.java:48)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchanger.bind(HeaderExchanger.java:41)
+	at com.alibaba.dubbo.remoting.exchange.Exchangers.bind(Exchangers.java:63)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.createServer(DubboProtocol.java:287)
+	... 33 more
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /0.0.0.0:20880
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyServer.doOpen(NettyServer.java:94)
+	at com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:67)
+	... 40 more
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:366)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:290)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	... 3 more
+2019-03-24 08:46:59,325 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:984)
+ Closing Root WebApplicationContext: startup date [Sun Mar 24 08:46:56 CST 2019]; root of context hierarchy
+2019-03-24 08:48:12,569 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 08:48:12,691 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 08:48:12 CST 2019]; root of context hierarchy
+2019-03-24 08:48:12,758 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 08:48:13,096 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 08:48:13,133 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 08:48:13,174 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 08:48:13,408 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 08:48:14,780 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.BrandService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:14,930 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:14,930 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:14,931 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.BrandService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=15128&registry=zookeeper&timestamp=1553388494795, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:15,118 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)
+  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.56.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:15,151 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-47.106.232.70.cache, data: {com.pinyougou.sellergoods.service.BrandService=empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=21336&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388391812}, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:15,171 [INFO ][ZkClient-EventThread-25-47.106.232.70:2181] method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+ Starting ZkClient event thread.
+2019-03-24 08:48:24,196 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2019-03-24 08:48:24,197 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:host.name=RN069R2M9E0IQHA
+2019-03-24 08:48:24,198 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.version=1.8.0_181
+2019-03-24 08:48:24,204 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.vendor=Oracle Corporation
+2019-03-24 08:48:24,204 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.home=E:\jdk\jre
+2019-03-24 08:48:24,204 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.class.path=E:\maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-24 08:48:24,205 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.library.path=E:\jdk\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/jre/bin/server;E:/jre/bin;E:/jre/lib/amd64;F:\xftp6\;F:\oracle\Administrator\product\11.2.0\client_1\bin;F:\oracle\Administrator\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;E:\jdk\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\maven\apache-maven-3.5.4\bin;C:\Program Files\erl9.2\bin;F:\mongoDB\bin;E:\gradle\gradle-4.10.2\bin;E:\android\Android\AndroidStudio\sdk\sdk\platform-tools;F:\svn\bin;F:\tortoiseSVN\bin;E:\curl\curl-7.62.0-win64-mingw\bin;C:\Program Files\dotnet\;F:\git\Git\cmd;F:\winSCP\WinSCP\;F:\scala\bin;E:\hadoop\hadoop-common-2.2.0-bin-master\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;F:\Intellij IDEA\IntelliJ IDEA 2018.3.3\bin;;E:\eclipse\eclipse-jee-mars-2-win32-x86_64\eclipse;;.
+2019-03-24 08:48:24,207 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-03-24 08:48:24,207 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.compiler=<NA>
+2019-03-24 08:48:24,208 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.name=Windows 10
+2019-03-24 08:48:24,208 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.arch=amd64
+2019-03-24 08:48:24,209 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.version=10.0
+2019-03-24 08:48:24,209 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.name=Administrator
+2019-03-24 08:48:24,209 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.home=C:\Users\Administrator
+2019-03-24 08:48:24,209 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.dir=F:\project\pinyougou-parent\pinyougou-sellergoods-service
+2019-03-24 08:48:24,211 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+ Initiating client connection, connectString=47.106.232.70:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@46c2ce4
+2019-03-24 08:48:24,238 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 08:48:24,250 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+ Socket connection established to 47.106.232.70/47.106.232.70:2181, initiating session
+2019-03-24 08:48:24,283 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+ Session establishment complete on server 47.106.232.70/47.106.232.70:2181, sessionid = 0x1699ea2e970002a, negotiated timeout = 30000
+2019-03-24 08:48:24,286 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (SyncConnected)
+2019-03-24 08:48:24,288 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:24,500 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:24,579 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:48:24,646 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:344)
+ Root WebApplicationContext: initialization completed in 12074 ms
+2019-03-24 08:49:34,076 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-2] method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:722)
+ {dataSource-1} inited
+2019-03-24 08:54:24,477 [WARN ][New I/O worker #1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)
+  [DUBBO] All clients has discontected from /192.168.56.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:54:24,480 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-22] method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+  [DUBBO] disconected from /192.168.56.1:52878,url:dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:55:39,986 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 08:55:40,045 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 08:55:40 CST 2019]; root of context hierarchy
+2019-03-24 08:55:40,111 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 08:55:40,451 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 08:55:40,481 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 08:55:40,530 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 08:55:40,783 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 08:55:42,079 [WARN ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+ Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.pinyougou.sellergoods.service.SpecificationService': Cannot resolve reference to bean 'specificationServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'specificationServiceImpl' available
+2019-03-24 08:55:42,082 [ERROR][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:350)
+ Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.pinyougou.sellergoods.service.SpecificationService': Cannot resolve reference to bean 'specificationServiceImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'specificationServiceImpl' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'specificationServiceImpl' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:687)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 24 more
+2019-03-24 08:57:24,682 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 08:57:24,752 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 08:57:24 CST 2019]; root of context hierarchy
+2019-03-24 08:57:24,810 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 08:57:25,371 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 08:57:25,407 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 08:57:25,459 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 08:57:25,745 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 08:57:27,333 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.BrandService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,482 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,483 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,483 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.BrandService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=1308&registry=zookeeper&timestamp=1553389047340, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,728 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)
+  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.56.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,750 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-47.106.232.70.cache, data: {com.pinyougou.sellergoods.service.BrandService=empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=configurators&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,deleteByIds,findAll&pid=12128&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553388563164 empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=routers&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,deleteByIds,findAll&pid=12128&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553388563164 dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=15128&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553388494817}, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:27,772 [INFO ][ZkClient-EventThread-25-47.106.232.70:2181] method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+ Starting ZkClient event thread.
+2019-03-24 08:57:36,818 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2019-03-24 08:57:36,819 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:host.name=RN069R2M9E0IQHA
+2019-03-24 08:57:36,819 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.version=1.8.0_181
+2019-03-24 08:57:36,820 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.vendor=Oracle Corporation
+2019-03-24 08:57:36,821 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.home=E:\jdk\jre
+2019-03-24 08:57:36,821 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.class.path=E:\maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-24 08:57:36,821 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.library.path=E:\jdk\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/jre/bin/server;E:/jre/bin;E:/jre/lib/amd64;F:\xftp6\;F:\oracle\Administrator\product\11.2.0\client_1\bin;F:\oracle\Administrator\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;E:\jdk\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\maven\apache-maven-3.5.4\bin;C:\Program Files\erl9.2\bin;F:\mongoDB\bin;E:\gradle\gradle-4.10.2\bin;E:\android\Android\AndroidStudio\sdk\sdk\platform-tools;F:\svn\bin;F:\tortoiseSVN\bin;E:\curl\curl-7.62.0-win64-mingw\bin;C:\Program Files\dotnet\;F:\git\Git\cmd;F:\winSCP\WinSCP\;F:\scala\bin;E:\hadoop\hadoop-common-2.2.0-bin-master\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;F:\Intellij IDEA\IntelliJ IDEA 2018.3.3\bin;;E:\eclipse\eclipse-jee-mars-2-win32-x86_64\eclipse;;.
+2019-03-24 08:57:36,822 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-03-24 08:57:36,822 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.compiler=<NA>
+2019-03-24 08:57:36,822 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.name=Windows 10
+2019-03-24 08:57:36,823 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.arch=amd64
+2019-03-24 08:57:36,823 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.version=10.0
+2019-03-24 08:57:36,823 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.name=Administrator
+2019-03-24 08:57:36,823 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.home=C:\Users\Administrator
+2019-03-24 08:57:36,827 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.dir=F:\project\pinyougou-parent\pinyougou-sellergoods-service
+2019-03-24 08:57:36,829 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+ Initiating client connection, connectString=47.106.232.70:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@49e3c702
+2019-03-24 08:57:36,851 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 08:57:36,862 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+ Socket connection established to 47.106.232.70/47.106.232.70:2181, initiating session
+2019-03-24 08:57:37,120 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+ Session establishment complete on server 47.106.232.70/47.106.232.70:2181, sessionid = 0x1699ea2e970002c, negotiated timeout = 30000
+2019-03-24 08:57:37,122 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (SyncConnected)
+2019-03-24 08:57:37,123 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,350 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,410 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,439 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.SpecificationService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,476 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.SpecificationService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,477 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.SpecificationService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,478 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.SpecificationService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=1308&registry=zookeeper&timestamp=1553389057443, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,481 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,529 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,582 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 08:57:37,595 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:344)
+ Root WebApplicationContext: initialization completed in 12909 ms
+2019-03-24 08:58:41,132 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-2] method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:722)
+ {dataSource-1} inited
+2019-03-24 10:22:01,326 [WARN ][New I/O worker #1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)
+  [DUBBO] All clients has discontected from /192.168.56.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 10:22:01,333 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-49] method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+  [DUBBO] disconected from /192.168.56.1:52993,url:dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:06,381 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:304)
+ Root WebApplicationContext: initialization started
+2019-03-24 11:06:06,441 [INFO ][localhost-startStop-1] method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)
+ Refreshing Root WebApplicationContext: startup date [Sun Mar 24 11:06:06 CST 2019]; root of context hierarchy
+2019-03-24 11:06:06,486 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-service.xml]
+2019-03-24 11:06:06,819 [INFO ][localhost-startStop-1] method:
+ using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-03-24 11:06:06,857 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from file [F:\project\pinyougou-parent\pinyougou-sellergoods-service\target\classes\spring\applicationContext-tx.xml]
+2019-03-24 11:06:06,901 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+ Loading XML bean definitions from URL [jar:file:/E:/maven/apache-maven-3.5.4/repository/com/pinyougou/pinyougou-dao/0.0.1-SNAPSHOT/pinyougou-dao-0.0.1-SNAPSHOT.jar!/spring/applicationContext-dao.xml]
+2019-03-24 11:06:07,152 [INFO ][localhost-startStop-1] method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-24 11:06:08,539 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.BrandService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,697 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,698 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.BrandService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,699 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.BrandService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=20252&registry=zookeeper&timestamp=1553396768552, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,909 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)
+  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.56.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,931 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-47.106.232.70.cache, data: {com.pinyougou.sellergoods.service.BrandService=empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=configurators&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=17172&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553389109976 empty://192.168.56.1/com.pinyougou.sellergoods.service.BrandService?application=pinyougou-manager-web&category=routers&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=17172&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553389109976 dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389047360, com.pinyougou.sellergoods.service.SpecificationService=empty://192.168.56.1/com.pinyougou.sellergoods.service.SpecificationService?application=pinyougou-manager-web&category=configurators&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=17172&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553389120182 empty://192.168.56.1/com.pinyougou.sellergoods.service.SpecificationService?application=pinyougou-manager-web&category=routers&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=17172&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1553389120182 dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=1308&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553389057445}, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:08,943 [INFO ][ZkClient-EventThread-25-47.106.232.70:2181] method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+ Starting ZkClient event thread.
+2019-03-24 11:06:17,985 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+2019-03-24 11:06:17,986 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:host.name=RN069R2M9E0IQHA
+2019-03-24 11:06:17,987 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.version=1.8.0_181
+2019-03-24 11:06:17,989 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.vendor=Oracle Corporation
+2019-03-24 11:06:17,989 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.home=E:\jdk\jre
+2019-03-24 11:06:17,990 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.class.path=E:\maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar
+2019-03-24 11:06:17,990 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.library.path=E:\jdk\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/jre/bin/server;E:/jre/bin;E:/jre/lib/amd64;F:\xftp6\;F:\oracle\Administrator\product\11.2.0\client_1\bin;F:\oracle\Administrator\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;E:\jdk\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\maven\apache-maven-3.5.4\bin;C:\Program Files\erl9.2\bin;F:\mongoDB\bin;E:\gradle\gradle-4.10.2\bin;E:\android\Android\AndroidStudio\sdk\sdk\platform-tools;F:\svn\bin;F:\tortoiseSVN\bin;E:\curl\curl-7.62.0-win64-mingw\bin;C:\Program Files\dotnet\;F:\git\Git\cmd;F:\winSCP\WinSCP\;F:\scala\bin;E:\hadoop\hadoop-common-2.2.0-bin-master\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;F:\Intellij IDEA\IntelliJ IDEA 2018.3.3\bin;;E:\eclipse\eclipse-jee-mars-2-win32-x86_64\eclipse;;.
+2019-03-24 11:06:17,990 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-03-24 11:06:17,991 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:java.compiler=<NA>
+2019-03-24 11:06:17,991 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.name=Windows 10
+2019-03-24 11:06:17,992 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.arch=amd64
+2019-03-24 11:06:17,992 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:os.version=10.0
+2019-03-24 11:06:17,992 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.name=Administrator
+2019-03-24 11:06:17,992 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.home=C:\Users\Administrator
+2019-03-24 11:06:17,993 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+ Client environment:user.dir=F:\project\pinyougou-parent\pinyougou-sellergoods-service
+2019-03-24 11:06:17,994 [INFO ][localhost-startStop-1] method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+ Initiating client connection, connectString=47.106.232.70:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@40dd869f
+2019-03-24 11:06:18,024 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 11:06:18,033 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+ Socket connection established to 47.106.232.70/47.106.232.70:2181, initiating session
+2019-03-24 11:06:18,048 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+ Session establishment complete on server 47.106.232.70/47.106.232.70:2181, sessionid = 0x1699ea2e970002e, negotiated timeout = 30000
+2019-03-24 11:06:18,049 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (SyncConnected)
+2019-03-24 11:06:18,051 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,105 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,159 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,187 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.SpecificationService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,213 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.SpecificationService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,214 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.SpecificationService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,214 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.SpecificationService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=20252&registry=zookeeper&timestamp=1553396778191, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,400 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,446 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,492 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.SpecificationService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.SpecificationService&methods=add,selectOptionList,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778192], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,493 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)
+  [DUBBO] The service ready on spring started. service: com.pinyougou.sellergoods.service.TypeTemplateService, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,513 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.TypeTemplateService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,513 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)
+  [DUBBO] Export dubbo service com.pinyougou.sellergoods.service.TypeTemplateService to url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,514 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)
+  [DUBBO] Register dubbo service com.pinyougou.sellergoods.service.TypeTemplateService url dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498 to registry registry://47.106.232.70:2181/com.alibaba.dubbo.registry.RegistryService?application=pinyougou-sellergoods-service&dubbo=2.5.3&pid=20252&registry=zookeeper&timestamp=1553396778497, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,515 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+  [DUBBO] Register: dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,580 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+  [DUBBO] Subscribe: provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,628 [INFO ][localhost-startStop-1] method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+  [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498, urls: [empty://192.168.56.1:20880/com.pinyougou.sellergoods.service.TypeTemplateService?anyhost=true&application=pinyougou-sellergoods-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pinyougou.sellergoods.service.TypeTemplateService&methods=add,findOne,update,findPage,delete,findAll&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396778498], dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:06:18,639 [INFO ][localhost-startStop-1] method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:344)
+ Root WebApplicationContext: initialization completed in 12255 ms
+2019-03-24 11:09:39,198 [WARN ][New I/O worker #1] method:com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)
+  [DUBBO] All clients has discontected from /192.168.56.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:09:39,201 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-2] method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+  [DUBBO] disconected from /192.168.56.1:64263,url:dubbo://192.168.56.1:20880/com.pinyougou.sellergoods.service.BrandService?anyhost=true&application=pinyougou-sellergoods-service&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.pinyougou.sellergoods.service.BrandService&methods=add,findOneById,selectOptionList,update,findByPage,findAll,deleteByIds&pid=20252&revision=0.0.1-SNAPSHOT&side=provider&timeout=300000&timestamp=1553396768568, dubbo version: 2.5.3, current host: 127.0.0.1
+2019-03-24 11:11:22,052 [INFO ][DubboServerHandler-192.168.56.1:20880-thread-4] method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:722)
+ {dataSource-1} inited
+2019-03-24 12:16:40,013 [WARN ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162)
+ Session 0x1699ea2e970002e for server 47.106.232.70/47.106.232.70:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2019-03-24 12:16:40,122 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (Disconnected)
+2019-03-24 12:16:42,027 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 12:17:03,029 [WARN ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162)
+ Session 0x1699ea2e970002e for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2019-03-24 12:17:04,745 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+ Opening socket connection to server 47.106.232.70/47.106.232.70:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-03-24 12:17:04,754 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+ Socket connection established to 47.106.232.70/47.106.232.70:2181, initiating session
+2019-03-24 12:17:04,765 [INFO ][localhost-startStop-1-SendThread(47.106.232.70:2181)] method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+ Session establishment complete on server 47.106.232.70/47.106.232.70:2181, sessionid = 0x1699ea2e970002e, negotiated timeout = 30000
+2019-03-24 12:17:04,765 [INFO ][localhost-startStop-1-EventThread] method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+ zookeeper state changed (SyncConnected)

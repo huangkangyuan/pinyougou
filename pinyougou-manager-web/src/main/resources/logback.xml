@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration scan="true" debug="false" scanPeriod="60 seconds">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="INFO-FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/webapps/rbac/logs/info/info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/webapps/rbac/logs/info/info.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1024MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{55} -
+                %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+
+    <appender name="ACCESS-FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${catalina.base}/webapps/rbac/logs/access/access.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${catalina.base}/webapps/rbac/logs/access/access.%d{yyyy-MM-dd}.%i.log.zip
+            </FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1024MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{55} -
+                %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+
+    <logger name="com.hl" level="DEBUG" additivity="false">
+        <!--控制台日志输出-->
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+
+    <root level="INFO">
+        <appender-ref ref="INFO-FILE"/>
+    </root>
+
+</configuration>
