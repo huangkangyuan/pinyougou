@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 配置包扫描器，扫描所有带@Service注解的类 -->
+	<context:component-scan base-package="com.pinyougou.*" />
+	
+	<dubbo:application name="pinyougou-sellergoods-service"/>  
+    <!-- 注册中心的地址 -->
+	<dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
+	<dubbo:registry protocol="zookeeper" address="47.106.232.70:2181" />
+	<dubbo:service interface="com.pinyougou.content.service.ContentService" ref="contentServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.pinyougou.content.service.ContentCategoryService" ref="contentCategoryServiceImpl" timeout="300000"/>
+</beans>
