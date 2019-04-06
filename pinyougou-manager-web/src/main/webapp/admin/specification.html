@@ -14,17 +14,16 @@
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
     
+    <!-- 引入angular的js -->
     <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-	
-	<!-- 分页组件开始 -->
-	<script src="../plugins/angularjs/pagination.js"></script>
-	<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-	<!-- 分页组件结束 -->
-	
-	<script type="text/javascript" src="../js/base_pagination.js"></script>
-	<script type="text/javascript" src="../js/service/specificationService.js"></script>
-	<script type="text/javascript" src="../js/controller/baseController.js"></script>
-	<script type="text/javascript" src="../js/controller/specificationController.js"></script>
+    <!-- 引入分页相关的JS和CSS -->
+    <script type="text/javascript" src="../plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    
+    <script type="text/javascript" src="../js/base_pagination.js"></script>
+    <script type="text/javascript" src="../js/controller/baseController.js"></script>
+    <script type="text/javascript" src="../js/service/specificationService.js"></script>
+    <script type="text/javascript" src="../js/controller/specificationController.js"></script>
     
 </head>
 
@@ -41,8 +40,8 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ng-click="entity={specificationOptionList:[]}"><i class="fa fa-file-o"></i> 新建</button>
-                                        <button type="button" class="btn btn-default" title="删除" ng-click="dele()"><i class="fa fa-trash-o"></i> 删除</button>
+                                        <button type="button" class="btn btn-default" title="新建" ng-click="entity={specificationOptionList:[]}" data-toggle="modal" data-target="#editModal" ><i class="fa fa-file-o"></i> 新建</button>
+                                        <button type="button" class="btn btn-default" title="删除" ng-click="dele()" ><i class="fa fa-trash-o"></i> 删除</button>
                                         
                                         <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
                                     </div>
@@ -51,7 +50,7 @@
                             <div class="box-tools pull-right">
                                 <div class="has-feedback">
 							                    规格名称：<input ng-model="searchEntity.specName" >									
-									<button class="btn btn-default" ng-click="reloadList()">查询</button>                                    
+									<button class="btn btn-default" ng-click="reloadList()" type="button" >查询</button>                                    
                                 </div>
                             </div>
                             <!--工具栏/-->
@@ -69,20 +68,20 @@
 			                      </thead>
 			                      <tbody>
 			                          <tr ng-repeat="entity in list">
-			                              <td><input  type="checkbox" ng-click="updateSelection($event, entity.id)" ></td>			                              
+			                              <td><input  type="checkbox" ng-click="updateSelection($event,entity.id)"></td>			                              
 				                          <td>{{entity.id}}</td>
 									      <td>{{entity.specName}}</td>
 		                                  <td class="text-center">                                           
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" ng-click="findOne(entity.id)">修改</button>                                           
+		                                 	  <button type="button" class="btn bg-olive btn-xs" ng-click="findOne(entity.id)" data-toggle="modal" data-target="#editModal">修改</button>                                           
 		                                  </td>
 			                          </tr>
-									 
 			                      </tbody>
 			                  </table>
-			                  <!--数据列表/-->  
-			                   <tm-pagination conf="paginationConf"></tm-pagination>  
+			                  <!--数据列表/-->    
                         </div>
                         <!-- 数据表格 /--> 
+                        <!-- 分页 -->
+						<tm-pagination conf="paginationConf"></tm-pagination>
                      </div>
                     <!-- /.box-body -->                    
 	          		    
@@ -123,13 +122,13 @@
                       <tr ng-repeat="pojo in entity.specificationOptionList">
                            
 				            <td>
-				            	<input  class="form-control" placeholder="规格选项" ng-model="pojo.optionName"> 
+				            	<input ng-model="pojo.optionName" class="form-control" placeholder="规格选项"> 
 				            </td>
 				            <td>
-				            	<input  class="form-control" placeholder="排序" ng-model="pojo.orders"> 
+				            	<input ng-model="pojo.orders" class="form-control" placeholder="排序"> 
 				            </td>
 							<td>
-								<button type="button" class="btn btn-default" title="删除" ng-click="deleTableRow($index)" ><i class="fa fa-trash-o"></i> 删除</button>
+								<button type="button" class="btn btn-default" title="删除" ng-click="deleteTableRow($index)"><i class="fa fa-trash-o"></i> 删除</button>
 							</td>
                       </tr>
 					 

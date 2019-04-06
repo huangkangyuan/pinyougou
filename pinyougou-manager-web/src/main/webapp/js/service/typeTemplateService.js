@@ -19,7 +19,7 @@ app.service('typeTemplateService',function($http){
 	}
 	//修改 
 	this.update=function(entity){
-		return  $http.post('../typeTemplate/update.do',entity );
+		return  $http.post('../typeTemplate/update.do',entity);
 	}
 	//删除
 	this.dele=function(ids){

@@ -15,29 +15,25 @@
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
     
+    <!-- 引入angular的js -->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <!-- 引入分页相关的JS和CSS -->
+    <script type="text/javascript" src="../plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    
+    <script type="text/javascript" src="../js/base_pagination.js"></script>
+    <script type="text/javascript" src="../js/controller/baseController.js"></script>
+    <script type="text/javascript" src="../js/service/typeTemplateService.js"></script>
+    <script type="text/javascript" src="../js/service/brandService.js"></script>
+    <script type="text/javascript" src="../js/service/specificationService.js"></script>
+    <script type="text/javascript" src="../js/controller/typeTemplateController.js"></script>
+    
+    <!-- 引入select2的相关的css和js -->
     <link rel="stylesheet" href="../plugins/select2/select2.css" />
     <link rel="stylesheet" href="../plugins/select2/select2-bootstrap.css" />
-    <script type="text/javascript" src="../plugins/select2/select2.min.js" ></script>
+    <script src="../plugins/select2/select2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/angular-select2.js">  </script>
     
-    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-	
-	
-	<!-- 分页组件开始 -->
-	<script src="../plugins/angularjs/pagination.js"></script>
-	
-	<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-	<!-- 分页组件结束 -->
-	
-	<script type="text/javascript" src="../js/base_pagination.js"></script>
-	
-	<script type="text/javascript" src="../js/angular-select2.js"> </script>
-		
-	<script type="text/javascript" src="../js/service/typeTemplateService.js"></script>
-	<script type="text/javascript" src="../js/service/brandService.js"></script>
-	<script type="text/javascript" src="../js/service/specificationService.js"></script>
-	<script type="text/javascript" src="../js/controller/baseController.js"></script>
-	<script type="text/javascript" src="../js/controller/typeTemplateController.js"></script>
-
 </head>
 
 <body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="typeTemplateController" ng-init="findBrandList();findSpecList()">
@@ -56,8 +52,8 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ng-click="entity={customAttributeItems:[]}"><i class="fa fa-file-o"></i> 新建</button>
-                                        <button type="button" class="btn btn-default" title="删除" ng-click="dele()"><i class="fa fa-trash-o"></i> 删除</button>
+                                        <button type="button" class="btn btn-default" title="新建"  data-toggle="modal" data-target="#editModal" ><i class="fa fa-file-o"></i> 新建</button>
+                                        <button type="button" class="btn btn-default" ng-click="dele()" title="删除"><i class="fa fa-trash-o"></i> 删除</button>
                                        
                                         <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
                                     </div>
@@ -66,7 +62,7 @@
                             <div class="box-tools pull-right">
                                 <div class="has-feedback">
 							                  分类模板名称：<input ng-model="searchEntity.name" >									
-									<button class="btn btn-default" ng-click="reloadList()">查询</button>                                    
+									<button class="btn btn-default" ng-click="reloadList()" type="button">查询</button>                                    
                                 </div>
                             </div>
                             <!--工具栏/-->
@@ -88,21 +84,21 @@
 			                      </thead>
 			                      <tbody>
 			                          <tr ng-repeat="entity in list">
-			                              <td><input  type="checkbox" ng-click="updateSelection($event, entity.id)" ></td>			                              
+			                              <td><input  type="checkbox" ng-click="updateSelection($event,entity.id)"></td>			                              
 				                          <td>{{entity.id}}</td>
 									      <td>{{entity.name}}</td>
 									      <td>{{jsonToString(entity.brandIds,'text')}}</td>
 									      <td>{{jsonToString(entity.specIds,'text')}}</td>									 
 									      <td>{{jsonToString(entity.customAttributeItems,'text')}}</td>		                                                                  
 		                                  <td class="text-center">                                           
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" ng-click="findOne(entity.id)">修改</button>                                           
+		                                 	  <button type="button" class="btn bg-olive btn-xs" ng-click="findOne(entity.id)" data-toggle="modal" data-target="#editModal" >修改</button>                                           
 		                                  </td>
 			                          </tr>
-									  
 			                      </tbody>
 			                  </table>
 			                  <!--数据列表/-->                        
-							   <tm-pagination conf="paginationConf"></tm-pagination>  
+							  <!-- 分页 -->
+							<tm-pagination conf="paginationConf"></tm-pagination>
 							 
                         </div>
                         <!-- 数据表格 /-->
@@ -128,21 +124,24 @@
 			
 			<table class="table table-bordered table-striped"  width="800px">
 		      	<tr>
-		      		<td>商品类型</td>
-		      		<td><input  class="form-control" placeholder="商品类型" ng-model="entity.name">  </td>
+		      		<td>模板类型</td>
+		      		<td><input  class="form-control" placeholder="模板类型" ng-model="entity.name">  </td>
 		      	</tr>			   
 		      	<tr>
 		      		<td>关联品牌</td>
 		      		<td>
-		      			<!-- 把选择后的数据绑定到select2-model 就是在页面勾选的那些 用于保存数据 -->
-		      			<input select2 select2-model="entity.brandIds"  config="brandList" multiple placeholder=" 选择品牌（可多选） " class="form-control">
+		      			<!-- 
+		      				ng-model:绑定下拉列表的id
+		      				select2-model:绑定下拉列表的id和value
+		      				config:代表的是数据的来源
+		      			 -->
+		      			<input select2 select2-model="entity.brandIds" config="brandList" multiple placeholder="支持多选哦" class="form-control" type="text"/>
 		      		</td>
 		      	</tr>
 		      	<tr>
 		      		<td>关联规格</td>
 		      		<td>
-		      			<!-- 把选择后的数据绑定到select2-model 就是在页面勾选的那些 用于保存数据-->
-						<input select2 select2-model="entity.specIds"  config="specList" multiple placeholder=" 选择规格（可多选） " class="form-control">
+						<input select2 select2-model="entity.specIds" config="specList" multiple placeholder="支持多选哦" class="form-control" type="text"/>
 		      		</td>
 		      	</tr>	
 		      	
@@ -150,7 +149,7 @@
 		      		<td>扩展属性</td>
 		      		<td>
 		      			<div class="btn-group">
-                             <button type="button" class="btn btn-default" title="新增扩展属性" ng-click="addTableRow()"><i class="fa fa-file-o"></i> 新增扩展属性</button>
+                             <button type="button" class="btn btn-default" ng-click="addTableRow()" title="新增扩展属性"><i class="fa fa-file-o"></i> 新增扩展属性</button>
                                                                     
                         </div>
 						<table class="table table-bordered table-striped"  width="800px">
@@ -164,10 +163,9 @@
 							<tbody>
 								<tr ng-repeat="pojo in entity.customAttributeItems">
 									<td><input type="checkbox" class="icheckbox_square-blue" ></td>
-									<td><input class="form-control" placeholder="属性名称" ng-model="pojo.text"></td>
-									<td><button type="button" class="btn btn-default" title="删除" ng-click="deleTableRow($index)"><i class="fa fa-trash-o"></i> 删除</button></td>
+									<td><input class="form-control" ng-model="pojo.text" placeholder="属性名称" ></td>
+									<td><button type="button" ng-click="deleteTableRow($index)" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i> 删除</button></td>
 								</tr>
-								
 							</tbody>
 						</table>	
            

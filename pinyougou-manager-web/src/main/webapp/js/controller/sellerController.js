@@ -41,7 +41,7 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 		}				
 		serviceObject.success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					//重新查询 
 		        	$scope.reloadList();//重新加载
 				}else{
@@ -57,9 +57,9 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 		//获取选中的复选框			
 		sellerService.dele( $scope.selectIds ).success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					$scope.reloadList();//刷新列表
-					$scope.selectIds=[];
+					$scope.selectIds = [];
 				}						
 			}		
 		);				
@@ -77,4 +77,14 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 		);
 	}
     
+	$scope.updateStatus = function(sellerId,status){
+		sellerService.updateStatus(sellerId,status).success(function(response){
+			if(response.flag){
+				//重新查询 
+	        	$scope.reloadList();//重新加载
+			}else{
+				alert(response.message);
+			}
+		});
+	}
 });	

@@ -41,7 +41,7 @@ app.controller('specificationController' ,function($scope,$controller   ,specifi
 		}				
 		serviceObject.success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					//重新查询 
 		        	$scope.reloadList();//重新加载
 				}else{
@@ -57,9 +57,9 @@ app.controller('specificationController' ,function($scope,$controller   ,specifi
 		//获取选中的复选框			
 		specificationService.dele( $scope.selectIds ).success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					$scope.reloadList();//刷新列表
-					$scope.selectIds=[];
+					$scope.selectIds = [];
 				}						
 			}		
 		);				
@@ -77,15 +77,13 @@ app.controller('specificationController' ,function($scope,$controller   ,specifi
 		);
 	}
 	
-	//$scope.entity={specificationOptionList:[]};
 	
-	//增加规格选项行
-	$scope.addTableRow=function(){
-		$scope.entity.specificationOptionList.push({});			
+	
+	$scope.addTableRow = function(){
+		$scope.entity.specificationOptionList.push({});
 	}
 	
-	//删除规格选项行
-	$scope.deleTableRow=function(index){
+	$scope.deleteTableRow = function(index){
 		$scope.entity.specificationOptionList.splice(index,1);
 	}
     

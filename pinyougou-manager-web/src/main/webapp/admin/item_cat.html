@@ -14,9 +14,17 @@
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
     
+    <!-- 引入angular的js -->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../js/controller/baseController.js"></script>
+    <script type="text/javascript" src="../js/controller/itemCatController.js"></script>
+    <script type="text/javascript" src="../js/service/itemCatService.js"></script>
+    
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" >
+<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="itemCatController" ng-init="findByParentId(0)">
   <!-- .box-body -->
                 
                     <div class="box-header with-border">
@@ -27,13 +35,13 @@
                     <div class="box-body">
                   			 <ol class="breadcrumb">	                        	
                         		<li>
-		                        	<a href="#" >顶级分类列表</a> 
+		                        	<a href="#" ng-click="grade=1;selectList({id:0})">顶级分类列表</a> 
 		                        </li>
 		                        <li>
-		                       		<a href="#" >珠宝</a>
+		                       		<a href="#" ng-click="grade=2;selectList(entity_1)">{{entity_1.name}}</a>
 		                        </li>
 		                        <li>
-		                        	<a href="#" >银饰</a>
+		                        	<a href="#" ng-click="grade=3;selectList(entity_2)">{{entity_2.name}}</a>
 		                        </li>
 	                        </ol>
 
@@ -46,12 +54,16 @@
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ><i class="fa fa-file-o"></i> 新建</button>
                                         <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
-                                        <button type="button" class="btn btn-default" title="刷新" ><i class="fa fa-check"></i> 刷新</button>
+                                        <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-check"></i> 刷新</button>
                                        
                                     </div>
                                 </div>
                             </div>                          
-                       		
+                       		<div class="box-tools pull-right">
+                                <div class="has-feedback">
+							          分类名称:<input type="text" ng-model="searchEntity.name"> 类型模板ID:<input type="text" ng-model="searchEntity.typeId"> <input class="btn btn-default" ng-click="reloadList()" type="button" value="查询">                               
+                                </div>
+                            </div>
                         
 			                <!--数据列表-->
 			                  <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
@@ -68,39 +80,17 @@
 			                          </tr>
 			                      </thead>
 			                      <tbody>
-			                          <tr >
+			                          <tr ng-repeat="entity in list">
 			                              <td><input  type="checkbox" ></td>			                              
-				                          <td>982</td>
-									      <td>吊坠/项链</td>									    
+				                          <td>{{entity.id}}</td>
+									      <td>{{entity.name}}</td>									    
 									      <td>
-									      	11    
+									      	{{entity.typeId}}  
 									      </td>									      
-		                                  <td class="text-center">		                                     
-		                                      <button type="button" class="btn bg-olive btn-xs" >查询下级</button> 		                                     
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>                                           
-		                                  </td>
-			                          </tr>
-									  <tr >
-			                              <td><input  type="checkbox"> </td>			                              
-				                          <td>983</td>
-									      <td>手镯/手链/脚链</td>									    
-									      <td>
-									      	11    
-									      </td>									      
-		                                  <td class="text-center">		                                     
-		                                      <button type="button" class="btn bg-olive btn-xs" >查询下级</button> 		                                     
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>                                           
-		                                  </td>
-			                          </tr>
-									  <tr >
-			                              <td><input  type="checkbox" ></td>			                              
-				                          <td>984</td>
-									      <td>戒指/耳饰</td>									    
-									      <td>
-									      	11    
-									      </td>									      
-		                                  <td class="text-center">		                                     
-		                                      <button type="button" class="btn bg-olive btn-xs" >查询下级</button> 		                                     
+		                                  <td class="text-center">		      
+			                                  <span ng-if="grade != 3">                          
+			                                      <button type="button" ng-click="setGrade(grade+1);selectList(entity);" class="btn bg-olive btn-xs" >查询下级</button> 		                                     
+			                                  </span>     
 		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>                                           
 		                                  </td>
 			                          </tr>
