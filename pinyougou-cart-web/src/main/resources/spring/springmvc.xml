@@ -20,8 +20,11 @@
 	<dubbo:application name="pinyougou-manager-web" />
 	<dubbo:registry protocol="zookeeper" address="47.106.232.70:2181"/>
 	<dubbo:reference interface="com.pinyougou.cart.service.CartService" id="cartService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.user.service.AddressService" id="addressService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.order.service.OrderService" id="orderService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.pay.service.WeixinPayService" id="weixinPayService" timeout="300000"/>
     
-    <context:property-placeholder location="classpath:config/application.properties" />
+    <context:property-placeholder location="classpath:properties/*.properties" />
 	
 	<mvc:annotation-driven>
 	  <mvc:message-converters register-defaults="true">

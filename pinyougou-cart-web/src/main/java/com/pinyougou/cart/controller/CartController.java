@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,6 +36,7 @@ public class CartController {
 	public List<Cart> findCartList(){
 		//当前登录人账号
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		//如果没有登录的话username=anonymousUser
 		System.out.println("当前登录人："+username);
 		
 		String cartListString = CookieUtil.getCookieValue(request, "cartList", "UTF-8");  //cookie中有汉字的话
@@ -57,7 +59,7 @@ public class CartController {
 				List<Cart> cartList = cartService.mergeCartList(cartList_cookie, cartList_redis);
 				//将合并后的购物车存入redis 
 				cartService.saveCartListToRedis(username, cartList);
-				//本地购物车清除
+				//本地购物车清除  防止重复登录造成多次合并
 				CookieUtil.deleteCookie(request, response, "cartList");
 				System.out.println("执行了合并购物车的逻辑");
 				return cartList;
@@ -68,10 +70,15 @@ public class CartController {
 	}
 	
 	@RequestMapping("/addGoodsToCartList")
+	@CrossOrigin(origins="http://localhost:9105",allowCredentials="true")
 	public Result addGoodsToCartList(Long itemId,Integer num){
+		//response.setHeader("Access-Control-Allow-Origin", "http://localhost:9105");//可以访问的域(当此方法不需要操作cookie)
+		//response.setHeader("Access-Control-Allow-Credentials", "true");//如果操作cookie，必须加上这句话
+		
+		
 		//当前登录人账号
-		String name = SecurityContextHolder.getContext().getAuthentication().getName();
-		System.out.println("当前登录人："+name);
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		System.out.println("当前登录人："+username);
 		
 	
 		try {
@@ -80,14 +87,14 @@ public class CartController {
 			//调用服务方法操作购物车
 			cartList = cartService.addGoodsToCartList(cartList, itemId, num);
 			
-			if(name.equals("anonymousUser")){//如果未登录
+			if(username.equals("anonymousUser")){//如果未登录
 				//将新的购物车存入cookie
 				String cartListString = JSON.toJSONString(cartList);
 				CookieUtil.setCookie(request, response, "cartList", cartListString, 3600*24, "UTF-8");
 				System.out.println("向cookie存储购物车");		
 				
 			}else{//如果登录				
-				cartService.saveCartListToRedis(name, cartList);				
+				cartService.saveCartListToRedis(username, cartList);				
 			}
 
 			return new Result(true, "存入购物车成功");
