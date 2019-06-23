@@ -16,5 +16,6 @@
 	<dubbo:protocol name="dubbo" port="20883"></dubbo:protocol>
 	<dubbo:registry protocol="zookeeper" address="47.106.232.70:2181" />
 	<dubbo:service interface="com.pinyougou.user.service.UserService" ref="userServiceImpl" timeout="5000000" />
+	<dubbo:service interface="com.pinyougou.user.service.AddressService" ref="addressServiceImpl" timeout="5000000" />
    
 </beans>
