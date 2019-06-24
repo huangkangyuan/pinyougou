@@ -26,7 +26,7 @@ app.controller('userController' ,function($scope,$controller   ,userService){
 			return ;
 		}
 		
-		userService.sendCode($scope.entity.phone).success(
+		userService.sendCode($scope.entity.phone  ).success(
 			function(response){
 				alert(response.message);
 			}
