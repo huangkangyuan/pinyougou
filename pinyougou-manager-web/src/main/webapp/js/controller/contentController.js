@@ -80,9 +80,11 @@ app.controller('contentController' ,function($scope,$controller ,uploadService,c
 	// 文件上传的方法:
 	$scope.uploadFile = function(){
 		uploadService.uploadFile().success(function(response){
-			if(response.flag){
+			if(response.success){
+				console.log(response.message);
 				$scope.entity.pic = response.message;
 			}else{
+				console.log(response.message);
 				alert(response.message);
 			}
 		});

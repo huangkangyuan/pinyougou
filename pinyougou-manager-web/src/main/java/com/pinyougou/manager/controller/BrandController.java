@@ -31,10 +31,14 @@ public class BrandController {
 	public PageResult findPage(int page,int rows){
 		return brandService.findByPage(page, rows);
 	}
-	
-	@RequestMapping("/add")
+
+	@RequestMapping("/save")
 	public Result add(@RequestBody TbBrand brand){
 		try {
+			int brandSize = brandService.findByName(brand.getName());
+			if(brandSize>0){
+				return new Result(false, "品牌已存在,请重新填写");
+			}
 			brandService.add(brand);
 			return new Result(true, "增加品牌成功");
 		} catch (Exception e) {
@@ -42,12 +46,12 @@ public class BrandController {
 			return new Result(false, "增加品牌失败");
 		}
 	}
-	
-	@RequestMapping("/findOne")
-	public TbBrand findOne(Long id){
+
+	@RequestMapping("/findById")
+	public TbBrand findById(Long id){
 		return brandService.findOneById(id);
 	}
-	
+
 	@RequestMapping("/update")
 	public Result update(@RequestBody TbBrand brand){
 		try {
@@ -58,7 +62,7 @@ public class BrandController {
 			return new Result(false, "修改品牌失败");
 		}
 	}
-	
+
 	@RequestMapping("/delete")
 	public Result delete(Long[] ids){
 		try {
@@ -69,13 +73,13 @@ public class BrandController {
 			return new Result(false, "删除品牌失败");
 		}
 	}
-	
+
 	//PageHelper 分页BUG
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbBrand brand,@RequestParam(value = "page",defaultValue="1")Integer page,@RequestParam(value = "rows",defaultValue="10")Integer rows){
-		return brandService.findByPage(brand, page, rows);		
+		return brandService.findByPage(brand, page, rows);
 	}
-	
+
 	@RequestMapping("/selectOptionList")
 	public List<Map> selectOptionList() {
 		return brandService.selectOptionList();

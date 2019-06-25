@@ -33,3 +33,6 @@ Thumbs.db
 
 #xsd
 *.xsd
+
+#cmd
+mvnw.cmd

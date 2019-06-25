@@ -55,6 +55,12 @@ public class SpecificationController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@RequestBody Specification specification) {
+		
+		int count = specificationService.findByName(specification.getSpecification().getSpecName());
+		if (count > 0) {
+			return new Result(false, "该规格已经存在,请重新填写");
+		}
+		
 		try {
 			specificationService.add(specification);
 			return new Result(true, "规格增加成功");

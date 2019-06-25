@@ -36,7 +36,8 @@
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
 	
-  	 <context-param>
+	
+   <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/spring-security.xml</param-value>
 	 </context-param>
@@ -53,6 +54,5 @@
 	 <filter-mapping>  
 		<filter-name>springSecurityFilterChain</filter-name>  
 		<url-pattern>/*</url-pattern>  
-	 </filter-mapping>		
-	
+	 </filter-mapping>	
 </web-app>

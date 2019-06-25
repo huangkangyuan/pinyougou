@@ -4,9 +4,6 @@
   <resultMap id="BaseResultMap" type="com.pinyougou.pojo.TbContentCategory" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="content_group" property="contentGroup" jdbcType="VARCHAR" />
-    <result column="content_key" property="contentKey" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +64,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, content_group, content_key, status
+    id, name
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pinyougou.pojo.TbContentCategoryExample" >
     select
@@ -100,10 +97,8 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.pinyougou.pojo.TbContentCategory" >
-    insert into tb_content_category (id, name, content_group, 
-      content_key, status)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{contentGroup,jdbcType=VARCHAR}, 
-      #{contentKey,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+    insert into tb_content_category (id, name)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.pinyougou.pojo.TbContentCategory" >
     insert into tb_content_category
@@ -114,15 +109,6 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="contentGroup != null" >
-        content_group,
-      </if>
-      <if test="contentKey != null" >
-        content_key,
-      </if>
-      <if test="status != null" >
-        status,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -130,15 +116,6 @@
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="contentGroup != null" >
-        #{contentGroup,jdbcType=VARCHAR},
-      </if>
-      <if test="contentKey != null" >
-        #{contentKey,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -157,15 +134,6 @@
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.contentGroup != null" >
-        content_group = #{record.contentGroup,jdbcType=VARCHAR},
-      </if>
-      <if test="record.contentKey != null" >
-        content_key = #{record.contentKey,jdbcType=VARCHAR},
-      </if>
-      <if test="record.status != null" >
-        status = #{record.status,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -174,10 +142,7 @@
   <update id="updateByExample" parameterType="map" >
     update tb_content_category
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      content_group = #{record.contentGroup,jdbcType=VARCHAR},
-      content_key = #{record.contentKey,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=VARCHAR}
+      name = #{record.name,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -188,24 +153,12 @@
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="contentGroup != null" >
-        content_group = #{contentGroup,jdbcType=VARCHAR},
-      </if>
-      <if test="contentKey != null" >
-        content_key = #{contentKey,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pinyougou.pojo.TbContentCategory" >
     update tb_content_category
-    set name = #{name,jdbcType=VARCHAR},
-      content_group = #{contentGroup,jdbcType=VARCHAR},
-      content_key = #{contentKey,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR}
+    set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

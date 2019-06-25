@@ -8,8 +8,20 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+	<!-- 引用dubbo 服务 -->
+	<dubbo:application name="pinyougou-manager-web" />
+	<dubbo:registry protocol="zookeeper" address="47.106.232.70:2181"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.BrandService" id="brandService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.SpecificationService" id="specificationService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.TypeTemplateService" id="typeTemplateService" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.SellerService" id="sellerServiceImpl" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.GoodsService" id="goodsServiceImpl" timeout="300000"/>
+	<dubbo:reference interface="com.pinyougou.sellergoods.service.ItemCatService" id="itemCatServiceImpl" timeout="300000"/>
+			
 	<context:property-placeholder location="classpath:config/application.properties" />
+	
+	<!-- 配置包扫描器，扫描@Controller注解的类 -->
+	<context:component-scan base-package="com.pinyougou.shop.controller"/>
 
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
@@ -38,10 +50,13 @@
 
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-
-	<!-- 引用dubbo 服务 -->
-	<dubbo:application name="pinyougou-shop-web" />
-	<dubbo:registry address="zookeeper://47.106.232.70:2181" />
-	<dubbo:annotation package="com.pinyougou.shop.controller" />
+	
+	<!-- 配置多媒体解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值 5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
 
 </beans>

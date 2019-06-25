@@ -6,4 +6,13 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>pinyougou-pojo</artifactId>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-solr</artifactId>
+		<version>1.5.5.RELEASE</version>
+	</dependency>
+  
+  </dependencies>
 </project>

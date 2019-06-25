@@ -33,15 +33,15 @@
                             
                             <div class="box-tools pull-right">
                                 <div class="has-feedback">
-							        公司名称：<input  >
-									店铺名称： <input  >
+							        公司名称：<input  ng-model="searchEntity.name">
+									店铺名称： <input  ng-model="searchEntity.nickName">
 									状态：
 									<input type="radio" value="" />全部
 									<input type="radio" value="0" />待审核
 									<input type="radio" value="1" />已审核
 									<input type="radio" value="2" />审核未通过
 									<input type="radio" value="3" />关闭
-									<button class="btn btn-default" >查询</button>                                    
+									<button class="btn btn-default" ng-click="relaoadList()">查询</button>
                                 </div>
                             </div>
                             <!--工具栏/-->

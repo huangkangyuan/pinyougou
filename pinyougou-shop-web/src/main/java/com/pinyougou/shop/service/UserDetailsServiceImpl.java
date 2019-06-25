@@ -29,14 +29,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		System.out.println(username + "经过了UserDetailsServiceImpl........" + sellerService);
 		// 构建角色列表
 		List<GrantedAuthority> grantAuths = new ArrayList<GrantedAuthority>();
 		grantAuths.add(new SimpleGrantedAuthority("ROLE_SELLER"));
 
 		// 得到商家对象
 		TbSeller seller = sellerService.findOne(username);
-		System.out.println(seller.toString());
 		if (seller != null) {
 			if (seller.getStatus().equals("1")) {
 				return new User(username, seller.getPassword(), grantAuths);

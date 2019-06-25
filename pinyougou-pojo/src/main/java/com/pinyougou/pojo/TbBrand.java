@@ -2,34 +2,44 @@ package com.pinyougou.pojo;
 
 import java.io.Serializable;
 
-public class TbBrand implements Serializable{
-    private Long id;
+public class TbBrand implements Serializable {
+	private Long id;
 
-    private String name;
+	private String name;
 
-    private String firstChar;
+	private String image;
 
-    public Long getId() {
-        return id;
-    }
+	private String firstChar;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getFirstChar() {
-        return firstChar;
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public void setFirstChar(String firstChar) {
-        this.firstChar = firstChar == null ? null : firstChar.trim();
-    }
+	public String getFirstChar() {
+		return firstChar;
+	}
+
+	public void setFirstChar(String firstChar) {
+		this.firstChar = firstChar == null ? null : firstChar.trim();
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 }

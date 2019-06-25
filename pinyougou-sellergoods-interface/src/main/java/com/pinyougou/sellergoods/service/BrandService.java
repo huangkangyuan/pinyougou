@@ -30,4 +30,6 @@ public interface BrandService {
 
 	public List<Map> selectOptionList();
 	
+	public int findByName(String BrandName);
+	
 }

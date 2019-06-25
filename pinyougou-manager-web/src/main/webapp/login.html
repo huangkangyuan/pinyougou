@@ -37,12 +37,12 @@
 						<img src="../img/wx_cz.jpg" />
 					</div>
 					<div id="profile" class="tab-pane  active">
-						<form class="sui-form">
+						<form class="sui-form" method="post" action="/login" id="loginForm">
 							<div class="input-prepend"><span class="add-on loginname"></span>
-								<input id="prependedInput" type="text" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
+								<input id="prependedInput" name="username" type="text" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
 							</div>
 							<div class="input-prepend"><span class="add-on loginpwd"></span>
-								<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">
+								<input id="prependedInput" name="password" type="password" placeholder="请输入密码" class="span2 input-xfat">
 							</div>
 							<div class="setting">
 								 <div id="slider">
@@ -51,7 +51,7 @@
 									</div>
 							</div>
 							<div class="logined">
-								<a class="sui-btn btn-block btn-xlarge btn-danger" href="admin/index.html" target="_blank">登&nbsp;&nbsp;录</a>
+								<a class="sui-btn btn-block btn-xlarge btn-danger" onclick="document.getElementById('loginForm').submit()" target="_blank">登&nbsp;&nbsp;录</a>
 							</div>
 						</form>
 
@@ -75,8 +75,8 @@
 			<li>销售联盟</li>
 			<li>品优购社区</li>
 		</ul>
-		<div class="address">地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100</div>
-		<div class="beian">京ICP备08001421号京公网安备110108007702
+		<div class="address">地址：广东工业大学华立学院 邮编：524001 电话：400-618-4000 传真：010-82935100</div>
+		<div class="beian">粤ICP备08001421号京公网安备110108007702
 		</div>
 	</div>
 

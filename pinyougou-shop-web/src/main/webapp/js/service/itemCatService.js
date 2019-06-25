@@ -28,10 +28,9 @@ app.service('itemCatService',function($http){
 	//搜索
 	this.search=function(page,rows,searchEntity){
 		return $http.post('../itemCat/search.do?page='+page+"&rows="+rows, searchEntity);
-	}  
-	//根据上级分类查询商品分类列表
-	this.findByParentId=function(parentId){
-		return $http.get('../itemCat/findByParentId.do?parentId='+parentId);
-	}
+	}    	
 	
+	this.findByParentId = function(parentId){
+		return $http.get("../itemCat/findByParentId.do?parentId="+parentId);
+	}
 });

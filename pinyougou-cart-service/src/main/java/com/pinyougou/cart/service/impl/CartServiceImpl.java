@@ -20,6 +20,9 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	private TbItemMapper itemMapper;
 	
+	@Autowired
+	private RedisTemplate redisTemplate;
+	
 	@Override
 	public List<Cart> addGoodsToCartList(List<Cart> cartList, Long itemId, Integer num) {
 		
@@ -129,9 +132,6 @@ public class CartServiceImpl implements CartService {
 		return orderItem;
 	}
 	
-	@Autowired
-	private RedisTemplate redisTemplate;
-
 	@Override
 	public List<Cart> findCartListFromRedis(String username) {
 		System.out.println("从redis中提取购物车"+username);

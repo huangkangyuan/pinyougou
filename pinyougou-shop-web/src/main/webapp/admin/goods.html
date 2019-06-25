@@ -15,24 +15,23 @@
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
     
+    <!-- 引入angular的js -->
     <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-	<!-- 分页组件开始 -->
-	<script src="../plugins/angularjs/pagination.js"></script>
-	<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-	<!-- 分页组件结束 -->
-
-	<script type="text/javascript" src="../js/base_pagination.js"></script>
-	<script type="text/javascript" src="../js/service/goodsService.js"></script>
-	<script type="text/javascript" src="../js/service/uploadService.js"></script>
-	<script type="text/javascript" src="../js/service/itemCatService.js"></script>
-	<script type="text/javascript" src="../js/service/typeTemplateService.js"></script>
-	<script type="text/javascript" src="../js/controller/baseController.js"></script>
-	<script type="text/javascript" src="../js/controller/goodsController.js"></script>
+    <!-- 引入分页相关的JS和CSS -->
+    <script type="text/javascript" src="../plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    
+    <script type="text/javascript" src="../js/base_pagination.js"></script>
+    <script type="text/javascript" src="../js/controller/baseController.js"></script>
+    <script type="text/javascript" src="../js/controller/goodsController.js"></script>
+    <script type="text/javascript" src="../js/service/goodsService.js"></script>
+    <script type="text/javascript" src="../js/service/itemCatService.js"></script>
+    <script type="text/javascript" src="../js/service/uploadService.js"></script>  
+    <script type="text/javascript" src="../js/service/typeTemplateService.js"></script>  
  
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" 
-		ng-controller="goodsController" ng-init="findItemCatList()">
+<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="goodsController" ng-init="findItemCatList()">
   <!-- .box-body -->
                 
                     <div class="box-header with-border">
@@ -48,9 +47,8 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                       
-                                        <a href="goods_edit.html" class="btn btn-default">新建</a>
-                                        <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
+                                        <a href="goods_edit.html"  class="btn btn-default">新建</a>
+                                        <button type="button" class="btn btn-default" ng-click="dele()" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
                                         <button type="button" class="btn btn-default" title="提交审核" ><i class="fa fa-check"></i> 提交审核</button>
                                         <button type="button" class="btn btn-default" title="屏蔽" onclick='confirm("你确认要屏蔽吗？")'><i class="fa fa-ban"></i> 屏蔽</button>
                                         <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
@@ -58,15 +56,15 @@
                                 </div>
                             </div>
                             <div class="box-tools pull-right">
-             	                   <div class="has-feedback">
-                                	  状态：<select ng-model="searchEntity.auditStatus">
+                                <div class="has-feedback">
+                                  		状态：<select ng-model="searchEntity.auditStatus">
                                          	<option value="">全部</option>      
                                          	<option value="0">未审核</option>    
                                          	<option value="1">审核通过</option>    
                                          	<option value="2">审核未通过</option>    
-                                         	<option value="3">已关闭</option>                                     
+                                         	<option value="3">关闭</option>                                     
                                         </select>
-							                  商品名称：<input ng-model="searchEntity.goodsName">									
+							                  商品名称：<input type="text" ng-model="searchEntity.goodsName">									
 									<button class="btn btn-default" ng-click="reloadList()">查询</button>                                    
                                 </div>
                             </div>
@@ -91,7 +89,7 @@
 			                      </thead>
 			                      <tbody>
 			                          <tr ng-repeat="entity in list">
-			                              <td><input  type="checkbox"></td>			                              
+			                              <td><input  type="checkbox" ng-click="updateSelection($event,entity.id)"></td>				                              
 				                          <td>{{entity.id}}</td>
 									      <td>{{entity.goodsName}}</td>
 									      <td>{{entity.price}}</td>
@@ -99,21 +97,23 @@
 									      <td>{{itemCatList[entity.category2Id]}}</td>
 									      <td>{{itemCatList[entity.category3Id]}}</td>
 		                                  <td>
-		                                  	{{status[entity.auditStatus]}}
+		                                  	<span>
+		                                  		{{status[entity.auditStatus]}}
+		                                  	</span>
 		                                  </td>		                                  
-		                                  <td class="text-center">                                          
-		                                 	 
-		                                 	  <a href="goods_edit.html#?id={{entity.id}}" class="btn bg-olive btn-xs">修改</a>		                                 	                 
+		                                  <td class="text-center">
+		                                  	  <a class="btn bg-olive btn-xs" href="goods_edit.html#?id={{entity.id}}">修改</a>                                
 		                                  </td>
 			                          </tr>
 			                      </tbody>
 			                  </table>
 			                  <!--数据列表/-->                        
-							   <tm-pagination conf="paginationConf"></tm-pagination>
+							  
 							 
                         </div>
                         <!-- 数据表格 /-->
-                        
+                        <!-- 分页 -->
+						<tm-pagination conf="paginationConf"></tm-pagination>
                         
                      </div>
                     <!-- /.box-body -->

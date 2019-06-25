@@ -19,4 +19,8 @@
 	<dubbo:service interface="com.pinyougou.sellergoods.service.BrandService" ref="brandServiceImpl" timeout="300000"/>
 	<dubbo:service interface="com.pinyougou.sellergoods.service.SpecificationService" ref="specificationServiceImpl" timeout="300000"/>
 	<dubbo:service interface="com.pinyougou.sellergoods.service.TypeTemplateService" ref="typeTemplateServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.pinyougou.sellergoods.service.SellerService" ref="sellerServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.pinyougou.sellergoods.service.SellerService" ref="sellerServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.pinyougou.sellergoods.service.GoodsService" ref="goodsServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.pinyougou.sellergoods.service.ItemCatService" ref="itemCatServiceImpl" timeout="300000"/>
 </beans>

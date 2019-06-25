@@ -85,4 +85,12 @@ public class BrandServiceImpl implements BrandService {
 	public List<Map> selectOptionList() {
 		return brandMapper.selectOptionList();
 	}
+
+	@Override
+	public int findByName(String brandName) {
+		TbBrandExample example = new TbBrandExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andNameEqualTo(brandName);
+		return brandMapper.countByExample(example);
+	}
 }

@@ -41,20 +41,19 @@
 							<img src="img/wx_cz.jpg" />
 						</div>
 						<div id="profile" class="tab-pane  active">
-							<form class="sui-form" action="/login" method="post" id="loginform">
+							<form class="sui-form" id="loginForm" action="/login" method="post">
 								<div class="input-prepend"><span class="add-on loginname"></span>
-									<input id="prependedInput" type="text" name="username" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
+									<input id="prependedInput" name="username" type="text" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
 								</div>
 								<div class="input-prepend"><span class="add-on loginpwd"></span>
-									<input id="prependedInput" type="password" name="password" placeholder="请输入密码" class="span2 input-xfat">
+									<input id="prependedInput" name="password" type="password" placeholder="请输入密码" class="span2 input-xfat">
 								</div>
 								<div class="setting">
 									<label class="checkbox inline"><input name="m1" type="checkbox" value="2" checked="">自动登录</label>
 									<span class="forget">忘记密码？</span>
 								</div>
 								<div class="logined">
-									<!-- 可以通过超链接实现表单提交  也可以是<button></button> -->
-									<a class="sui-btn btn-block btn-xlarge btn-danger" onclick="document:loginform.submit()" target="_blank">登&nbsp;&nbsp;录</a>
+									<a class="sui-btn btn-block btn-xlarge btn-danger" onclick="document.getElementById('loginForm').submit()" target="_blank">登&nbsp;&nbsp;录</a>
 								</div>
 							</form>
 							<div class="otherlogin">
@@ -87,7 +86,7 @@
 				<li>销售联盟</li>
 				<li>品优购社区</li>
 			</ul>
-			<div class="address">地址：广东工业大学华立学院 邮编：100096 电话：400-618-4000 传真：010-82935100</div>
+			<div class="address">地址：广东工业大学华立学院  邮编：100096 电话：400-618-4000 传真：010-82935100</div>
 			<div class="beian">京ICP备08001421号京公网安备110108007702
 			</div>
 		</div>

@@ -41,7 +41,7 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 		}				
 		serviceObject.success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					//重新查询 
 		        	$scope.reloadList();//重新加载
 				}else{
@@ -51,29 +51,29 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 		);				
 	}
 	
-	
-	//新增 
-	$scope.add=function(){
+	$scope.add = function(){
 		sellerService.add( $scope.entity  ).success(
 			function(response){
-				if(response.success){
-					//如果注册成功，跳转到登录页
-		        	location.href="shoplogin.html";
+				if(response.flag){
+					// 重新查询 
+		        	// $scope.reloadList();//重新加载
+					location.href="shoplogin.html";
 				}else{
 					alert(response.message);
 				}
 			}		
-		);				
+		);	
 	}
+	
 	 
 	//批量删除 
 	$scope.dele=function(){			
 		//获取选中的复选框			
 		sellerService.dele( $scope.selectIds ).success(
 			function(response){
-				if(response.success){
+				if(response.flag){
 					$scope.reloadList();//刷新列表
-					$scope.selectIds=[];
+					$scope.selectIds = [];
 				}						
 			}		
 		);				

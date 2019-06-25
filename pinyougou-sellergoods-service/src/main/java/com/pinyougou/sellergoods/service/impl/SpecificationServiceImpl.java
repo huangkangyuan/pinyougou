@@ -162,4 +162,12 @@ public class SpecificationServiceImpl implements SpecificationService {
 		return specificationMapper.selectOptionList();
 	}
 
+	@Override
+	public int findByName(String specificationName) {
+		TbSpecificationExample example = new TbSpecificationExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andSpecNameEqualTo(specificationName);
+		return specificationMapper.countByExample(example);
+	}
+
 }

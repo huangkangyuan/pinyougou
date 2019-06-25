@@ -1,5 +1,5 @@
 // 定义控制器:
-app.controller("brandController",function($scope,$controller,$http,brandService){
+app.controller("brandController",function($scope,$controller,$http,brandService,uploadService){
 	// AngularJS中的继承:伪继承
 	$controller('baseController',{$scope:$scope});
 	
@@ -57,14 +57,14 @@ app.controller("brandController",function($scope,$controller,$http,brandService)
 	// 删除品牌:
 	$scope.dele = function(){
 		brandService.dele($scope.selectIds).success(function(response){
-			// 判断保存是否成功:
+			// 判断删除是否成功:
 			if(response.flag==true){
-				// 保存成功
+				// 删除成功
 				// alert(response.message);
 				$scope.reloadList();
 				$scope.selectIds = [];
 			}else{
-				// 保存失败
+				// 删除失败
 				alert(response.message);
 			}
 		});
@@ -78,6 +78,17 @@ app.controller("brandController",function($scope,$controller,$http,brandService)
 		brandService.search(page,rows,$scope.searchEntity).success(function(response){
 			$scope.paginationConf.totalItems = response.total;
 			$scope.list = response.rows;
+		});
+	}
+	
+	// 文件上传的方法:
+	$scope.uploadFile = function(){
+		uploadService.uploadFile().success(function(response){
+			if(response.flag){
+				$scope.entity.image = response.message;
+			}else{
+				$scope.entity.image = response.message;
+			}
 		});
 	}
 	

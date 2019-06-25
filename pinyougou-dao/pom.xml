@@ -8,44 +8,41 @@
 	</parent>
 	<artifactId>pinyougou-dao</artifactId>
 
-	<!--<dependencies>-->
-	<!--<dependency>-->
-	    <!--<groupId>com.github.pagehelper</groupId>-->
-	    <!--<artifactId>pagehelper</artifactId>	   -->
-	<!--</dependency>	-->
+	<dependencies>
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>	  
+	</dependency>	
 	<!---->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-beans</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
 
-		<!--&lt;!&ndash; Mybatis &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.mybatis</groupId>-->
-			<!--<artifactId>mybatis</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.mybatis</groupId>-->
-			<!--<artifactId>mybatis-spring</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>com.github.miemiedev</groupId>-->
-			<!--<artifactId>mybatis-paginator</artifactId>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash; MySql &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>mysql</groupId>-->
-			<!--<artifactId>mysql-connector-java</artifactId>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash; 连接池 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>com.alibaba</groupId>-->
-			<!--<artifactId>druid</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>com.pinyougou</groupId>-->
-			<!--<artifactId>pinyougou-pojo</artifactId>-->
-			<!--<version>0.0.1-SNAPSHOT</version>-->
-		<!--</dependency>-->
-	<!--</dependencies>-->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.miemiedev</groupId>
+			<artifactId>mybatis-paginator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pinyougou</groupId>
+			<artifactId>pinyougou-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

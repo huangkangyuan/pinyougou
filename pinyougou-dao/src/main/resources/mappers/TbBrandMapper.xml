@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.pinyougou.pojo.TbBrand" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="first_char" property="firstChar" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, first_char
+    id, name, first_char,image
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pinyougou.pojo.TbBrandExample" >
     select
@@ -101,9 +102,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.pinyougou.pojo.TbBrand" >
-    insert into tb_brand (id, name, first_char
+    insert into tb_brand (id, name, first_char,image
       )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{firstChar,jdbcType=VARCHAR}
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{firstChar,jdbcType=VARCHAR},#{image,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.pinyougou.pojo.TbBrand" >
@@ -118,6 +119,9 @@
       <if test="firstChar != null" >
         first_char,
       </if>
+       <if test="image != null" >
+        image,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -128,6 +132,9 @@
       </if>
       <if test="firstChar != null" >
         #{firstChar,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -183,7 +190,7 @@
   </update>
   
   <select id="selectOptionList" resultType="java.util.Map">
-  	select id,name as text from tb_brand
+  	select id,image,name as text from tb_brand
   </select>
   
 </mapper>

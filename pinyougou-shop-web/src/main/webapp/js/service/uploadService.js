@@ -1,16 +1,17 @@
-app.service('uploadService',function($http){
+app.service("uploadService",function($http){
 	
-	//上传文件
-	this.uploadFile=function(){
-		var formdata=new FormData();//上传
-		formdata.append('file',file.files[0]);//file 文件上传框的name
+	this.uploadFile = function(){
+		// 向后台传递数据:
+		var formData = new FormData();
+		// 向formData中添加数据:
+		formData.append("file",file.files[0]);
 		
 		return $http({
-			url:'../upload.do',		
 			method:'post',
-			data:formdata,
-			headers:{'Content-Type':undefined },//默认是JSON
-			transformRequest: angular.identity	 //二进制序列化		
+			url:'../upload/uploadFile.do',
+			data:formData,
+			headers:{'Content-Type':undefined} ,// Content-Type : text/html  text/plain
+			transformRequest: angular.identity
 		});
 	}
 	

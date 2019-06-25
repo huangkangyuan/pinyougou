@@ -54,6 +54,7 @@ public class TypeTemplateController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@RequestBody TbTypeTemplate typeTemplate) {
+		
 		try {
 			typeTemplateService.add(typeTemplate);
 			return new Result(true, "类型模板增加成功");

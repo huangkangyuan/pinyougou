@@ -10,12 +10,13 @@ import com.pinyougou.common.util.FastDFSClient;
 import entity.Result;
 
 @RestController
+@RequestMapping("/upload")
 public class UploadController {
 
 	@Value("${FILE_SERVER_URL}")
 	private String file_server_url;
 
-	@RequestMapping("/upload")
+	@RequestMapping("/uploadFile")
 	public Result upload(MultipartFile file) {
 
 		String originalFilename = file.getOriginalFilename();// 获取文件名

@@ -59,7 +59,11 @@ public interface TypeTemplateService {
 	 * @return
 	 */
 	public PageResult findPage(TbTypeTemplate typeTemplate, int pageNum,int pageSize);
-	
 
+
+	public List<Map> findSpecList(Long id);
+
+
+	public int findByName(String typeTemplateName);
 	
 }

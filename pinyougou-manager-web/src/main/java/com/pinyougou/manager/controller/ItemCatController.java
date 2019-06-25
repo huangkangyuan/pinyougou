@@ -1,10 +1,10 @@
 package com.pinyougou.manager.controller;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbItemCat;
 import com.pinyougou.sellergoods.service.ItemCatService;
 
@@ -18,8 +18,8 @@ import entity.Result;
 @RestController
 @RequestMapping("/itemCat")
 public class ItemCatController {
-
-	@Reference
+	
+	@Autowired
 	private ItemCatService itemCatService;
 	
 	/**
@@ -109,6 +109,17 @@ public class ItemCatController {
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbItemCat itemCat, int page, int rows  ){
 		return itemCatService.findPage(itemCat, page, rows);		
+	}
+	
+	
+	/**
+	 * 根据上级ID查询商品分类列表
+	 * @param parentId
+	 * @return
+	 */
+	@RequestMapping("/findByParentId")
+	public List<TbItemCat> findByParentId(Long parentId){
+		return itemCatService.findByParentId(parentId);
 	}
 	
 }

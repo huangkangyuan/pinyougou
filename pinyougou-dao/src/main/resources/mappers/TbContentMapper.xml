@@ -7,7 +7,6 @@
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
-    <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="sort_order" property="sortOrder" jdbcType="INTEGER" />
   </resultMap>
@@ -70,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, category_id, title, url, pic, content, status, sort_order
+    id, category_id, title, url, pic, status, sort_order
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pinyougou.pojo.TbContentExample" >
     select
@@ -104,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.pinyougou.pojo.TbContent" >
     insert into tb_content (id, category_id, title, 
-      url, pic, content, 
-      status, sort_order)
+      url, pic, status, sort_order
+      )
     values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER})
+      #{url,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.pinyougou.pojo.TbContent" >
     insert into tb_content
@@ -127,9 +126,6 @@
       </if>
       <if test="pic != null" >
         pic,
-      </if>
-      <if test="content != null" >
-        content,
       </if>
       <if test="status != null" >
         status,
@@ -153,9 +149,6 @@
       </if>
       <if test="pic != null" >
         #{pic,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null" >
-        #{content,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         #{status,jdbcType=VARCHAR},
@@ -189,9 +182,6 @@
       <if test="record.pic != null" >
         pic = #{record.pic,jdbcType=VARCHAR},
       </if>
-      <if test="record.content != null" >
-        content = #{record.content,jdbcType=VARCHAR},
-      </if>
       <if test="record.status != null" >
         status = #{record.status,jdbcType=VARCHAR},
       </if>
@@ -210,7 +200,6 @@
       title = #{record.title,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
-      content = #{record.content,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=VARCHAR},
       sort_order = #{record.sortOrder,jdbcType=INTEGER}
     <if test="_parameter != null" >
@@ -232,9 +221,6 @@
       <if test="pic != null" >
         pic = #{pic,jdbcType=VARCHAR},
       </if>
-      <if test="content != null" >
-        content = #{content,jdbcType=VARCHAR},
-      </if>
       <if test="status != null" >
         status = #{status,jdbcType=VARCHAR},
       </if>
@@ -250,7 +236,6 @@
       title = #{title,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       sort_order = #{sortOrder,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}

@@ -20,7 +20,7 @@
 		
 	</head>
 
-	<body ng-app="pinyougou" ng-controller="searchController">
+	<body ng-app="pinyougou" ng-controller="searchController" ng-init="loadkeywords()">
 		<!-- 头部栏位 -->
 		<!--页面顶部-->
 		<div id="nav-bottom">
@@ -84,7 +84,7 @@
 										<!--searchAutoComplete-->
 										<div class="input-append">
 											<input type="text" id="autocomplete" ng-model="searchMap.keywords" type="text" class="input-error input-xxlarge" />
-											<button class="sui-btn btn-xlarge btn-danger" ng-click="search()" type="button">搜索</button>
+											<button class="sui-btn btn-xlarge btn-danger" ng-click="searchMap.pageNo=1;search()" type="button">搜索</button>
 										</div>
 									</form>
 								</div>
@@ -161,7 +161,10 @@
 					<li class="tag" ng-if="searchMap.category!=''" ng-click="removeSearchItem('category')">商品分类：{{searchMap.category}}<i class="sui-icon icon-tb-close"></i></li>
 					<li class="tag" ng-if="searchMap.brand!=''" ng-click="removeSearchItem('brand')">品牌：{{searchMap.brand}}<i class="sui-icon icon-tb-close"></i></li>
 					<li class="tag" ng-repeat="(key,value) in searchMap.spec" ng-click="removeSearchItem(key)">{{key}}：{{value}}<i class="sui-icon icon-tb-close"></i></li>
+					<li class="tag" ng-if="searchMap.price!=''" ng-click="removeSearchItem('price')">价格：{{searchMap.price}}<i class="sui-icon icon-tb-close"></i></li>
 					
+					搜索结果：{{resultMap.total}}条
+				
 				</ul>
 				
 				<div class="clearfix"></div>
@@ -177,12 +180,12 @@
 					</div>
 					<div class="fl ext"></div>
 				</div>
-				<div class="type-wrap logo" ng-if="resultMap.brandList!=null && searchMap.brand=='' ">
+				<div class="type-wrap logo" ng-if="resultMap.brandList!=null && searchMap.brand=='' && keywordsIsBrand()==false">
 					<div class="fl key brand">品牌</div>
 					<div class="value logos">
 						<ul class="logo-list">
 							<li ng-repeat="brand in resultMap.brandList">
-								<a href="#" ng-click="addSearchItem('brand',brand.text)">{{brand.text}}</a>
+								<a href="#" ng-click="addSearchItem('brand',brand.text)"><img src="{{brand.image}}" /></a>
 							</li>							
 						</ul>
 					</div>
@@ -199,27 +202,27 @@
 					<div class="fl ext"></div>
 				</div>
 				
-				<div class="type-wrap">
+				<div class="type-wrap" ng-if="searchMap.price=='' ">
 					<div class="fl key">价格</div>
 					<div class="fl value">
 						<ul class="type-list">
 							<li>
-								<a>0-500元</a>
+								<a href="#" ng-click="addSearchItem('price','0-500')">0-500元</a>
 							</li>
 							<li>
-								<a>500-1000元</a>
+								<a href="#" ng-click="addSearchItem('price','500-1000')">500-1000元</a>
 							</li>
 							<li>
-								<a>1000-1500元</a>
+								<a href="#" ng-click="addSearchItem('price','1000-1500')">1000-1500元</a>
 							</li>
 							<li>
-								<a>1500-2000元</a>
+								<a href="#" ng-click="addSearchItem('price','1500-2000')">1500-2000元</a>
 							</li>
 							<li>
-								<a>2000-3000元 </a>
+								<a href="#" ng-click="addSearchItem('price','2000-3000')">2000-3000元 </a>
 							</li>
 							<li>
-								<a>3000元以上</a>
+								<a href="#" ng-click="addSearchItem('price','3000-*')">3000元以上</a>
 							</li>
 						</ul>
 					</div>
@@ -257,19 +260,22 @@
 					<div class="navbar-inner filter">
 						<ul class="sui-nav">
 							<li class="active">
-								<a href="#">综合</a>
+								<a href="#" ng-click="sortSearch('','')">综合</a>
 							</li>
 							<li>
 								<a href="#">销量</a>
 							</li>
 							<li>
-								<a href="#">新品</a>
+								<a href="#" ng-click="sortSearch('update_time','DESC')">新品</a>
 							</li>
 							<li>
 								<a href="#">评价</a>
 							</li>
 							<li>
-								<a href="#">价格</a>
+								<a href="#" ng-click="sortSearch('price','ASC')">价格↑</a>
+							</li>
+							<li>
+								<a href="#" ng-click="sortSearch('price','DESC')">价格↓</a>
 							</li>
 						</ul>
 					</div>
@@ -279,7 +285,7 @@
 						<li class="yui3-u-1-5" ng-repeat="item in resultMap.rows">
 							<div class="list-wrap">
 								<div class="p-img">
-									<a href="item.html" target="_blank"><img src="{{item.image}}" /></a>
+									<a href="http://localhost:9105//{{item.id}}.html" target="_blank"><img src="{{item.image}}" /></a>
 								</div>
 								<div class="price">
 									<strong>
@@ -309,33 +315,24 @@
 				<div class="fr page">
 					<div class="sui-pagination pagination-large">
 						<ul>
-							<li class="prev disabled">
-								<a href="#">«上一页</a>
+							<li class="prev {{isTopPage()?'disabled':''}}">
+								<a href="#" ng-click="queryByPage(searchMap.pageNo-1)">«</a>
 							</li>
-							<li class="active">
-								<a href="#">1</a>
+							<li class="dotted" ng-if="firstDot==true"><span>...</span></li>
+							<li ng-repeat="page in pageLabel">
+								<a href="#" ng-click="queryByPage(page)">{{page}}</a>
 							</li>
-							<li>
-								<a href="#">2</a>
-							</li>
-							<li>
-								<a href="#">3</a>
-							</li>
-							<li>
-								<a href="#">4</a>
-							</li>
-							<li>
-								<a href="#">5</a>
-							</li>
-							<li class="dotted"><span>...</span></li>
-							<li class="next">
-								<a href="#">下一页»</a>
+							<li class="dotted" ng-if="lastDot==true"><span>...</span></li>
+							<li class="next {{isEndPage()?'disabled':''}}">
+								<a href="#" ng-click="queryByPage(searchMap.pageNo+1)">»</a>
 							</li>
 						</ul>
-						<div><span>共10页&nbsp;</span><span>
-      到第
-      <input type="text" class="page-num">
-      页 <button class="page-confirm" onclick="alert(1)">确定</button></span></div>
+						<div><span>共{{resultMap.totalPages}}页&nbsp;</span>
+						<span>
+						      到第
+						      <input type="text" class="page-num" ng-model="searchMap.pageNo">
+						      页 </span><button class="page-confirm" ng-click="queryByPage(searchMap.pageNo)" >确定</button>
+      					</div>
 					</div>
 				</div>
 			</div>
@@ -551,8 +548,8 @@
 						<li>友情链接<span class="space"></span></li>
 						<li>关于我们</li>
 					</ul>
-					<p>地址：广东工业大学华立学院 邮编：100096 电话：400-618-4000 传真：010-82935100</p>
-					<p>京ICP备08001421号京公网安备110108007702</p>
+					<p>地址：广东工业大学华立学院</p>
+					<p>粤ICP备08001421号京公网安备110108007702</p>
 				</div>
 			</div>
 		</div>
