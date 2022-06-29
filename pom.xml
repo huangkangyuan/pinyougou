@@ -13,7 +13,7 @@
 		<pagehelper.version>5.1.8</pagehelper.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<dubbo.version>2.5.3</dubbo.version>
-		<zookeeper.version>3.4.7</zookeeper.version>
+		<zookeeper.version>3.4.14</zookeeper.version>
 		<zkclient.version>0.1</zkclient.version>
 		<mybatis.version>3.4.2</mybatis.version>
 		<mybatis.spring.version>1.3.1	</mybatis.spring.version>
